@@ -30,12 +30,12 @@ struct ContentView: View {
                 Button(action: {
                     let weight_float = Float(self.weight)
                     let height_float = Float(self.height)
-                    let BMI = weight_float!/pow((height_float! / 100, 2 )
-                                                self.BMI_String = String(BMI)
+                    let BMI = weight_float!/pow((height_float! / 100), 2)
+                            self.BMI_String = String(BMI)
                                                 switch BMI {
                     case 1..<15:
                         self.category = "very severly underweight"
-                    case 15..16:
+                    case 15..<16:
                         self.category = "severly underweight"
                     case 16..<18.5:
                         self.category = "underweight"
@@ -56,8 +56,13 @@ struct ContentView: View {
                     }
                         .background(Color.white)
                         .padding(.bottom, 50)
+                    HStack { Text("your bmi is").foregroundColor(Color.blue).font(.title)}.padding(.bottom, 25)
+                    Text(self.category)
+                        .fontWeight(.bold).font(.title).background(Color.yellow)
+                        
+                    }
                     }
                 }
-                    }
+                    
                 }
                 
