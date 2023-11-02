@@ -22,10 +22,13 @@ struct ContentView: View {
                     TextField("please enter it here:", text: $weight)
                         .padding(.bottom)
                         .padding(.top)
-                    
+                    HStack {
+                        Text("your height in cm:")
+                        TextField("please enter it here", text: $height)
+                    }
+                }.padding(.bottom, 50)
+                    }
                 }
                 
             }
         }
-    }
-}
