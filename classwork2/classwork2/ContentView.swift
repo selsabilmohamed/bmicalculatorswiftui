@@ -27,8 +27,37 @@ struct ContentView: View {
                         TextField("please enter it here", text: $height)
                     }
                 }.padding(.bottom, 50)
+                Button(action: {
+                    let weight_float = Float(self.weight)
+                    let height_float = Float(self.height)
+                    let BMI = weight_float!/pow((height_float! / 100, 2 )
+                                                self.BMI_String = String(BMI)
+                                                switch BMI {
+                    case 1..<15:
+                        self.category = "very severly underweight"
+                    case 15..16:
+                        self.category = "severly underweight"
+                    case 16..<18.5:
+                        self.category = "underweight"
+                    case 18.5..<25:
+                        self.category = "normal weight"
+                    case 25..<30:
+                        self.category = "overweight"
+                    case 30..<40:
+                        self.category = "moderately obese"
+                    case 40..<60:
+                        self.category = "severely obese"
+                    default:
+                        return
+                    }}) {
+                        Text("calculate my bmi!!")
+                            .fontWeight(.bold)
+                            .font(.title)
+                    }
+                        .background(Color.white)
+                        .padding(.bottom, 50)
+                    }
+                }
                     }
                 }
                 
-            }
-        }
